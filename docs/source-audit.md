@@ -1,4 +1,4 @@
-# Sanitized source assessment ? 2026-10-02
+# Sanitized source assessment — 2026-10-02
 
 ## Inventory and provenance
 
