@@ -1,16 +1,14 @@
-# Project memory — v4 · 2026-10-02
+# Project memory — v5, 2026-10-10
 
-- Purpose: published ArduPilot Lua engineering portfolio: https://github.com/lolpul/ardupilot-lua-scripts.
-- Git: PUBLIC, main/origin, new reviewed history with no source-history import. Account lolpul verified; owner authorized visibility, focused commits/pushes and profile update. Code commit a2458f45a2e137e62035089da9b54b47d822d51d; later documentation receipt does not change implementation.
-- Evidence: two supplied ZIP snapshots passed integrity checks. One substantive Lua file; second snapshot contains only template README. No licenses, project agent files or source history supplied. Source files/repositories unchanged and never executed.
-- Provenance boundary: original files, internal URLs/names, comments, mapping and operational constants excluded. Three newly written demonstrations explain mechanisms from one source example, not three historical projects. Do not add invented experience or UART/GPIO/MAVLink/parameter claims.
-- Architecture: modules/portfolio_runtime.lua guards optional bindings and time; inertial/sequence/lease modules are plain-data models. Three scripts/*/main.lua wrappers read firmware state and report text. Lease backend is in-memory; no hardware output/arming/mode/parameter writes.
-- Clock: unsigned userdata subtraction before conversion; logical epoch 65,536 ms for float32 precision; all durations < half epoch; long gaps invalidate. Lua channel capability reference is one-based in pinned upstream.
-- Commands: lua tests/run.lua; luac -p <file>. CI checks Ubuntu Lua 5.3 and checksum-verified stock Lua 5.3.5 with LUA_32BITS.
-- Verified locally: 36 behavioral/mocked-binding tests pass on Windows Lua 5.4.6 and stock Lua 5.3.5 with int32/float32 in local Linux development environment. Eight Lua files parse. Initial float32 rollover failures resolved with bounded epoch and checked by regression scenarios.
-- Unperformed: actual modified ArduPilot runtime, SITL, HIL, bench, flight and real RC output/watchdog validation. API reference only: official upstream revision cafe67457776027a1bad6e165c409828c1a851e5, not deployed firmware.
-- Documents: [confirmed spec](spec.md), [source assessment](source-audit.md), [architecture](architecture.md), [API references](api-reference.md), [testing](testing.md), [demo patch](patches/2026-10-02-engineering-examples.md).
-- Publication verification: 26 initial remote blobs matched local Git, anonymous metadata/README confirmed public/main and exact bytes. [Both CI jobs passed](https://github.com/lolpul/ardupilot-lua-scripts/actions/runs/36990047503) for the code commit. Final documentation head/tree is checked after its push; see [receipt](publication.md).
-- Integration: profile lolpul/lolpul updated/pushed at 869856eb69251a57c419edee49903c8eba316804; all five remote blobs and anonymous README bytes matched. Private website source lolpul/elisey-portfolio has a local uncommitted link/label patch over eb271b88875fbece1b3ef41c63629e83a76b6be5. Lint/build/typecheck and two existing Playwright link/scope tests passed. No website push/deployment or network change.
-- Backups: ignored .backups/ contains timestamped manifests and pre-change documents/code/note copies; .local/ contains private archive hash inventory and official reference/test tooling. Never stage either directory.
-- Next: independently evaluate exact target firmware in SITL if desired. Website patch is prepared only; committing/deploying it is separate scope. Maintain truthful validation/provenance statements. No physical action is in scope.
+- Purpose: Independent read-only observers and virtual ownership; MIT only for demonstration source.
+- Repository: https://github.com/lolpul/ardupilot-lua-scripts, PUBLIC, main; review branch portfolio-review-2026-10-10. Use git log/PR for delivery SHA.
+- Entry: README Review in 30 seconds → key implementation files/tests; existing architecture and deeper decisions retained.
+- Run/test commands: README and [dated verification](verification.md), checked during this review.
+- Verified: 36 host tests in both int64/float64 and int32/float32 Lua5.3.5; syntax passed; no SITL/HIL/bench/flight.
+- Limits: API documentation is pinned to an upstream revision, not verified deployed firmware. No output commands or real watchdog.
+- Changes: review navigation, honest maturity/validation wording, reproducible demonstration notes and this compact memory. Application algorithms/tests/workflows unchanged; 3D package description corrected to MVP.
+- Existing public portfolio integration was accepted 2026-10-02; no site deployment or production/network change in this review.
+- IP: no private original files/history, configuration, identifiers or working data transferred. New code/visibility/license/history changes require separate owner decision.
+- Backup: central ignored career-materials/.backups/github-review-20261010-015431 manifest; published-doc rollback via ordinary revert; unrelated files preserved.
+- Next: use these source/test paths for interviews; address documented integration/security/rights gaps through separate scoped work.
+- Patch: [portfolio review](patches/2026-10-10-portfolio-review.md).
