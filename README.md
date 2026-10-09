@@ -2,6 +2,10 @@
 
 A collection of independently prepared Lua examples for ArduPilot demonstrating sensor-event handling, guarded state transitions and temporary control-ownership logic.
 
+## Review in 30 seconds
+
+The engineering question is how observers retain a valid state when samples, scheduling or ownership acknowledgements fail. Read [event qualification](modules/portfolio_inertial.lua), [the guarded sequence](modules/portfolio_sequence.lua) and [virtual leases](modules/portfolio_lease.lua). [Host tests](tests/run.lua), [architecture](docs/architecture.md) and [latest verification](docs/verification.md) explain the boundary with firmware.
+
 [![Lua checks](https://github.com/lolpul/ardupilot-lua-scripts/actions/workflows/checks.yml/badge.svg)](https://github.com/lolpul/ardupilot-lua-scripts/actions/workflows/checks.yml)
 
 ## About
@@ -42,7 +46,7 @@ From the repository root with Lua 5.3 or 5.4 installed:
 lua tests/run.lua
 ```
 
-The 36 behavioral and mocked-binding scenarios passed locally with Lua 5.4.6 and checksum-verified stock Lua 5.3.5 built with `LUA_32BITS` (32-bit integers and floats). These are host results. **SITL, HIL, physical bench and flight validation have not been performed for this repository.** [Testing details and proposed procedures](docs/testing.md).
+On 2026-10-10, all 36 behavioral and mocked-binding scenarios passed with stock Lua 5.3.5 in both int64/float64 and `LUA_32BITS` int32/float32 builds. Earlier Lua 5.4.6 results are historical evidence. These are host results. **SITL, HIL, physical bench and flight validation have not been performed for this repository.** [Testing details and proposed procedures](docs/testing.md).
 
 ## Hardware / environment
 
